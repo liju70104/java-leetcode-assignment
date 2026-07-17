@@ -9,3 +9,15 @@ double* convertTemperature(double celsius, int* returnSize) {
     result[1] = celsius * 1.80 + 32.00;
     return result;
 }
+
+
+
+2. RUNNING SUM OF 1D ARRAY
+
+int* runningSum(int* nums, int numsSize, int* returnSize){
+    *returnSize = numsSize;
+    for (int i=1; i<numsSize; i++) {
+        nums[i] += nums[i-1];
+    }
+    return nums;
+}

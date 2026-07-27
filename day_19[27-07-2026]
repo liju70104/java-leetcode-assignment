@@ -1,0 +1,20 @@
+1. insertion of two array
+
+int* intersect(int* nums1, int size1, int* nums2, int size2, int* returnSize) {
+    int *arr = malloc(4*(size1<size2 ? size2:size1));
+    int ind=0;
+    for(int i=0;i<size1;i++)
+    {
+        for(int j=0;j<size2;j++)
+        {
+            if(nums1[i]==nums2[j])
+            {
+               arr[ind++]=nums2[j]; 
+               nums2[j]=-1;
+               break;              
+            }
+        }
+    }
+    *returnSize = ind;
+    return arr;
+}
